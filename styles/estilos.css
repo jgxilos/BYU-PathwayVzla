@@ -1,4 +1,4 @@
-﻿        /* ============================================
+        /* ============================================
            RESET & BASE STYLES
            ============================================ */
         *,
@@ -794,6 +794,7 @@
             grid-column: 1;
             border-radius: var(--radius-sm);
             overflow: hidden;
+            position: relative;
         }
 
         .gallery-images .gallery-img-large img {
@@ -852,12 +853,12 @@
         }
 
         /* Video gallery specific */
-        .gallery-img-small.video-thumb {
+        .video-thumb {
             position: relative;
             cursor: pointer;
         }
 
-        .gallery-img-small.video-thumb::after {
+        .video-thumb::after {
             content: '';
             position: absolute;
             top: 0;
@@ -868,7 +869,7 @@
             transition: var(--transition);
         }
 
-        .gallery-img-small.video-thumb:hover::after {
+        .video-thumb:hover::after {
             background: rgba(0, 0, 0, 0.15);
         }
 
@@ -889,7 +890,7 @@
             transition: var(--transition);
         }
 
-        .gallery-img-small.video-thumb:hover .video-play-icon {
+        .video-thumb:hover .video-play-icon {
             transform: translate(-50%, -50%) scale(1.1);
             background: var(--white);
         }
