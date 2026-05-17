@@ -415,6 +415,7 @@
         }
 
         function handleTipsAnimations() {
+            if (!document.querySelector('.tips-card')) return;
             const tips = document.querySelectorAll('.tip-item');
             if(tips.length === 0) return;
             const observer = new IntersectionObserver(function(entries) {

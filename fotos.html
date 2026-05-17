@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Fotos - BYU Pathway Venezuela</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/estilos.css">
+</head>
+
+<body>
+    <!-- PRELOADER -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-cap">
+            <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M60 15L15 35L60 55L105 35L60 15Z" fill="#0A3D6D" stroke="#0A3D6D" stroke-width="2" />
+                <path d="M25 40L60 58L95 40L95 75C95 85 80 95 60 100C40 95 25 85 25 75V40Z" fill="#065577" />
+                <rect x="55" y="35" width="10" height="12" rx="2" fill="#ffc328" />
+                <path d="M65 47L65 90" stroke="#ffc328" stroke-width="3" />
+                <circle cx="65" cy="92" r="6" fill="#ffc328" />
+                <path d="M60 45L60 60" stroke="#F2B632" stroke-width="4" stroke-linecap="round" />
+                <path d="M60 60C60 70 55 80 50 85" stroke="#F2B632" stroke-width="4" stroke-linecap="round" />
+            </svg>
+        </div>
+        <div class="preloader-text">Cargando</div>
+        <div class="preloader-dots">
+            <div class="preloader-dot"></div>
+            <div class="preloader-dot"></div>
+            <div class="preloader-dot"></div>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="header-inner">
+            <a href="index.html" class="header-logo">
+                <img src="images/logo.jpg" alt="BYU Pathway Venezuela Logo">
+            </a>
+            <nav class="header-nav" id="headerNav">
+                <a href="index.html">Inicio</a>
+                <a href="fotos.html" class="active">Fotos</a>
+                <a href="videos.html">Videos</a>
+                <a href="agenda.html">Agenda</a>
+                <a href="mensajes.html">Mensajes</a>
+                <a href="info.html">Acerca de</a>
+                <a href="#" class="live-link">En Vivo</a>
+            </nav>
+            <button class="header-cta" id="headerCta">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="17 8 12 3 7 8" />
+                    <line x1="12" y1="3" x2="12" y2="15" />
+                </svg>
+                Subir Contenido
+            </button>
+            <div class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- MOBILE NAV -->
+    <nav class="mobile-nav" id="mobileNav">
+        <a href="index.html" class="active">Inicio</a>
+        <a href="fotos.html">Fotos</a>
+        <a href="videos.html">Videos</a>
+        <a href="agenda.html">Agenda</a>
+        <a href="mensajes.html">Mensajes</a>
+        <a href="info.html">Acerca de</a>
+        <a href="#">En Vivo</a>
+        <a href="#" style="background: var(--blue-dark); color: white; text-align: center; margin-top: 10px;">
+            Subir Contenido â†‘
+        </a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gallery">
+        <div class="hero-gallery-bg">
+            <img src="images/Banner3.jpg" alt="Graduados BYU Pathway Venezuela">
+        </div>
+        <div class="hero-gallery-overlay"></div>
+        <div class="hero-gallery-content">
+            <div class="hero-gallery-text">
+                <div class="hero-gallery-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                        <circle cx="12" cy="13" r="4" />
+                    </svg>
+                    <h1>Galería de Fotos</h1>
+                </div>
+                <p class="hero-gallery-subtitle">
+                    Cada sonrisa, cada birrete al aire, cada abrazo.<br>
+                    Revive los momentos que nos unieron.
+                </p>
+                <div class="hero-stats">
+                    <div class="hero-stat-card">
+                        <span class="hero-stat-number">248</span>
+                        <span class="hero-stat-label">Fotos compartidas</span>
+                    </div>
+                    <div class="hero-stat-card">
+                        <span class="hero-stat-number">152</span>
+                        <span class="hero-stat-label">Graduados</span>
+                    </div>
+                    <div class="hero-stat-card">
+                        <span class="hero-stat-number">∞</span>
+                        <span class="hero-stat-label">Momentos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upload Section -->
+    <section class="upload-section">
+        <div class="upload-card fade-in">
+            <div class="upload-area">
+                <div class="upload-icon-circle">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                        <polyline points="17 8 12 3 7 8" />
+                        <line x1="12" y1="3" x2="12" y2="15" />
+                    </svg>
+                </div>
+                <h3 class="upload-title">Comparte tus mejores momentos</h3>
+                <p class="upload-desc">
+                    Sube tus fotos de la graduación y sé parte de<br>
+                    esta historia inolvidable.
+                </p>
+                <button class="btn-select-photos">
+                    Seleccionar fotos
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                        <circle cx="8.5" cy="8.5" r="1.5" />
+                        <polyline points="21 15 16 10 5 21" />
+                    </svg>
+                </button>
+                <p class="upload-drag-text">o arrastra y suelta tus archivos aquí</p>
+                <p class="upload-formats">Formatos: JPG, PNG, WEBP • Máx. 5MB por foto</p>
+            </div>
+            <div class="tips-area">
+                <h4 class="tips-title">Consejos:</h4>
+                <div class="tips-list">
+                    <div class="tip-item">
+                        <div class="tip-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                        </div>
+                        <p class="tip-text">Usa fotos nítidas y bien iluminadas.</p>
+                    </div>
+                    <div class="tip-item">
+                        <div class="tip-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                        </div>
+                        <p class="tip-text">Evita duplicados para mantener la galería organizada.</p>
+                    </div>
+                    <div class="tip-item">
+                        <div class="tip-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                        </div>
+                        <p class="tip-text">Sé respetuoso con la privacidad de otros.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="filters-section">
+        <div class="filters-bar fade-in">
+            <div class="filter-search">
+                <input type="text" placeholder="Buscar fotos..." id="searchInput">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8" />
+                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                </svg>
+            </div>
+            <select class="filter-select" id="categorySelect">
+                <option value="all">Todas las categorías</option>
+                <option value="grupo">Grupo</option>
+                <option value="individual">Individual</option>
+                <option value="amigos">Amigos</option>
+                <option value="celebracion">Celebración</option>
+                <option value="familia">Familia</option>
+                <option value="campus">Campus</option>
+                <option value="detalle">Detalle</option>
+            </select>
+            <select class="filter-select" id="sortSelect">
+                <option value="recent">Más recientes</option>
+                <option value="popular">Más populares</option>
+                <option value="oldest">Más antiguas</option>
+            </select>
+            <div class="view-toggle">
+                <button class="view-btn active" id="gridViewBtn" title="Vista cuadrícula">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <rect x="3" y="3" width="7" height="7" rx="1" />
+                        <rect x="14" y="3" width="7" height="7" rx="1" />
+                        <rect x="3" y="14" width="7" height="7" rx="1" />
+                        <rect x="14" y="14" width="7" height="7" rx="1" />
+                    </svg>
+                </button>
+                <button class="view-btn" id="listViewBtn" title="Vista lista">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <rect x="3" y="4" width="18" height="4" rx="1" />
+                        <rect x="3" y="10" width="18" height="4" rx="1" />
+                        <rect x="3" y="16" width="18" height="4" rx="1" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photos Grid -->
+    <section class="photos-section">
+        <div class="photos-grid" id="photosGrid">
+            <!-- Card 1 -->
+            <div class="photo-card fade-in" data-category="grupo">
+                <div class="photo-card-image">
+                    <img src="https://image.qwenlm.ai/public_source/f0a74e98-384c-4e90-96be-cb05ddd39cd3/1101f6d43-e1ce-49a9-80a2-458c74bda2e6.png"
+                        alt="¡Lo logramos juntos!">
+                    <span class="photo-badge">Grupo</span>
+                </div>
+                <div class="photo-card-content">
+                    <h4 class="photo-card-title">¡Lo logramos juntos!</h4>
+                    <div class="photo-card-user">
+                        <div class="photo-card-avatar">MG</div>
+                        <div class="photo-card-user-info">
+                            <span class="photo-card-user-name">María González</span>
+                            <span class="photo-card-user-time">Hace 2 horas</span>
+                        </div>
+                    </div>
+                    <div class="photo-card-footer">
+                        <div class="photo-card-actions">
+                            <button class="photo-action like" data-liked="false" data-count="24">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                </svg>
+                                <span class="likes-count">24</span>
+                            </button>
+                            <button class="photo-action comment">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                                </svg>
+                                <span>3</span>
+                            </button>
+                        </div>
+                        <button class="photo-action-menu">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <circle cx="12" cy="5" r="1.5" />
+                                <circle cx="12" cy="12" r="1.5" />
+                                <circle cx="12" cy="19" r="1.5" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="photo-card fade-in" data-category="individual">
+                <div class="photo-card-image">
+                    <img src="https://image.qwenlm.ai/public_source/f0a74e98-384c-4e90-96be-cb05ddd39cd3/1c74a1d11-275b-4058-ae45-8227301640f2.png"
+                        alt="Un sueño hecho realidad">
+                    <span class="photo-badge">Individual</span>
+                </div>
+                <div class="photo-card-content">
+                    <h4 class="photo-card-title">Un sueño hecho realidad</h4>
+                    <div class="photo-card-user">
+                        <div class="photo-card-avatar">JP</div>
+                        <div class="photo-card-user-info">
+                            <span class="photo-card-user-name">Juan Pérez</span>
+                            <span class="photo-card-user-time">Hace 3 horas</span>
+                        </div>
+                    </div>
+                    <div class="photo-card-footer">
+                        <div class="photo-card-actions">
+                            <button class="photo-action like" data-liked="false" data-count="18">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                </svg>
+                                <span class="likes-count">18</span>
+                            </button>
+                            <button class="photo-action comment">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                                </svg>
+                                <span>2</span>
+                            </button>
+                        </div>
+                        <button class="photo-action-menu">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <circle cx="12" cy="5" r="1.5" />
+                                <circle cx="12" cy="12" r="1.5" />
+                                <circle cx="12" cy="19" r="1.5" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="photo-card fade-in" data-category="amigos">
+                <div class="photo-card-image">
+                    <img src="https://image.qwenlm.ai/public_source/f0a74e98-384c-4e90-96be-cb05ddd39cd3/1e1073f5d-4663-47e1-9545-39213f9b95e2.png"
+                        alt="Amigos que se convierten en familia">
+                    <span class="photo-badge">Amigos</span>
+                </div>
+                <div class="photo-card-content">
+                    <h4 class="photo-card-title">Amigos que se convierten en familia</h4>
+                    <div class="photo-card-user">
+                        <div class="photo-card-avatar">AL</div>
+                        <div class="photo-card-user-info">
+                            <span class="photo-card-user-name">Andrea López</span>
+                            <span class="photo-card-user-time">Hace 5 horas</span>
+                        </div>
+                    </div>
+                    <div class="photo-card-footer">
+                        <div class="photo-card-actions">
+                            <button class="photo-action like" data-liked="false" data-count="31">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                </svg>
+                                <span class="likes-count">31</span>
+                            </button>
+                            <button class="photo-action comment">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                                </svg>
+                                <span>4</span>
+                            </button>
+                        </div>
+                        <button class="photo-action-menu">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <circle cx="12" cy="5" r="1.5" />
+                                <circle cx="12" cy="12" r="1.5" />
+                                <circle cx="12" cy="19" r="1.5" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="photo-card fade-in" data-category="celebracion">
+                <div class="photo-card-image">
+                    <img src="https://image.qwenlm.ai/public_source/f0a74e98-384c-4e90-96be-cb05ddd39cd3/111aeb9a9-72a5-4acb-bdd1-6f4d5b89f705.png"
+                        alt="El momento más esperado">
+                    <span class="photo-badge">Celebración</span>
+                </div>
+                <div class="photo-card-content">
+                    <h4 class="photo-card-title">El momento más esperado</h4>
+                    <div class="photo-card-user">
+                        <div class="photo-card-avatar">CD</div>
+                        <div class="photo-card-user-info">
+                            <span class="photo-card-user-name">Carlos Díaz</span>
+                            <span class="photo-card-user-time">Hace 6 horas</span>
+                        </div>
+                    </div>
+                    <div class="photo-card-footer">
+                        <div class="photo-card-actions">
+                            <button class="photo-action like" data-liked="false" data-count="27">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                </svg>
+                                <span class="likes-count">27</span>
+                            </button>
+                            <button class="photo-action comment">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                                </svg>
+                                <span>1</span>
+                            </button>
+                        </div>
+                        <button class="photo-action-menu">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <circle cx="12" cy="5" r="1.5" />
+                                <circle cx="12" cy="12" r="1.5" />
+                                <circle cx="12" cy="19" r="1.5" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="photo-card fade-in" data-category="familia">
+                <div class="photo-card-image">
+                    <img src="https://image.qwenlm.ai/public_source/f0a74e98-384c-4e90-96be-cb05ddd39cd3/1797249b4-8b8a-4e6d-b793-fbef4e5beef4.png"
+                        alt="Con mi mayor apoyo">
+                    <span class="photo-badge">Familia</span>
+                </div>
+                <div class="photo-card-content">
+                    <h4 class="photo-card-title">Con mi mayor apoyo</h4>
+                    <div class="photo-card-user">
+                        <div class="photo-card-avatar">SR</div>
+                        <div class="photo-card-user-info">
+                            <span class="photo-card-user-name">Sofía Ramírez</span>
+                            <span class="photo-card-user-time">Hace 7 horas</span>
+                        </div>
+                    </div>
+                    <div class="photo-card-footer">
+                        <div class="photo-card-actions">
+                            <button class="photo-action like" data-liked="false" data-count="22">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                </svg>
+                                <span class="likes-count">22</span>
+                            </button>
+                            <button class="photo-action comment">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                                </svg>
+                                <span>2</span>
+                            </button>
+                        </div>
+                        <button class="photo-action-menu">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <circle cx="12" cy="5" r="1.5" />
+                                <circle cx="12" cy="12" r="1.5" />
+                                <circle cx="12" cy="19" r="1.5" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="photo-card fade-in" data-category="campus">
+                <div class="photo-card-image">
+                    <img src="https://image.qwenlm.ai/public_source/f0a74e98-384c-4e90-96be-cb05ddd39cd3/18c3e48fc-6af9-4a15-97a6-406c90b570d8.png"
+                        alt="Nuestro campus, nuestro hogar">
+                    <span class="photo-badge">Campus</span>
+                </div>
+                <div class="photo-card-content">
+                    <h4 class="photo-card-title">Nuestro campus, nuestro hogar</h4>
+                    <div class="photo-card-user">
+                        <div class="photo-card-avatar">LM</div>
+                        <div class="photo-card-user-info">
+                            <span class="photo-card-user-name">Luis Martínez</span>
+                            <span class="photo-card-user-time">Hace 8 horas</span>
+                        </div>
+                    </div>
+                    <div class="photo-card-footer">
+                        <div class="photo-card-actions">
+                            <button class="photo-action like" data-liked="false" data-count="16">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                </svg>
+                                <span class="likes-count">16</span>
+                            </button>
+                            <button class="photo-action comment">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                                </svg>
+                                <span>1</span>
+                            </button>
+                        </div>
+                        <button class="photo-action-menu">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <circle cx="12" cy="5" r="1.5" />
+                                <circle cx="12" cy="12" r="1.5" />
+                                <circle cx="12" cy="19" r="1.5" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="photo-card fade-in" data-category="grupo">
+                <div class="photo-card-image">
+                    <img src="https://image.qwenlm.ai/public_source/f0a74e98-384c-4e90-96be-cb05ddd39cd3/17a26ce8d-8b7f-4797-99a4-08352d5170cb.png"
+                        alt="Generación de líderes">
+                    <span class="photo-badge">Grupo</span>
+                </div>
+                <div class="photo-card-content">
+                    <h4 class="photo-card-title">Generación de líderes</h4>
+                    <div class="photo-card-user">
+                        <div class="photo-card-avatar">VT</div>
+                        <div class="photo-card-user-info">
+                            <span class="photo-card-user-name">Valentina Torres</span>
+                            <span class="photo-card-user-time">Hace 9 horas</span>
+                        </div>
+                    </div>
+                    <div class="photo-card-footer">
+                        <div class="photo-card-actions">
+                            <button class="photo-action like" data-liked="false" data-count="29">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                </svg>
+                                <span class="likes-count">29</span>
+                            </button>
+                            <button class="photo-action comment">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                                </svg>
+                                <span>3</span>
+                            </button>
+                        </div>
+                        <button class="photo-action-menu">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <circle cx="12" cy="5" r="1.5" />
+                                <circle cx="12" cy="12" r="1.5" />
+                                <circle cx="12" cy="19" r="1.5" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 8 -->
+            <div class="photo-card fade-in" data-category="detalle">
+                <div class="photo-card-image">
+                    <img src="https://image.qwenlm.ai/public_source/f0a74e98-384c-4e90-96be-cb05ddd39cd3/138461089-c5fd-457b-9f00-d7dc122b0de5.png"
+                        alt="Cada detalle cuenta">
+                    <span class="photo-badge">Detalle</span>
+                </div>
+                <div class="photo-card-content">
+                    <h4 class="photo-card-title">Cada detalle cuenta</h4>
+                    <div class="photo-card-user">
+                        <div class="photo-card-avatar">AR</div>
+                        <div class="photo-card-user-info">
+                            <span class="photo-card-user-name">Ana Rodríguez</span>
+                            <span class="photo-card-user-time">Hace 10 horas</span>
+                        </div>
+                    </div>
+                    <div class="photo-card-footer">
+                        <div class="photo-card-actions">
+                            <button class="photo-action like" data-liked="false" data-count="15">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                </svg>
+                                <span class="likes-count">15</span>
+                            </button>
+                            <button class="photo-action comment">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                                </svg>
+                                <span>0</span>
+                            </button>
+                        </div>
+                        <button class="photo-action-menu">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <circle cx="12" cy="5" r="1.5" />
+                                <circle cx="12" cy="12" r="1.5" />
+                                <circle cx="12" cy="19" r="1.5" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 9 -->
+            <div class="photo-card fade-in" data-category="celebracion">
+                <div class="photo-card-image">
+                    <img src="https://image.qwenlm.ai/public_source/f0a74e98-384c-4e90-96be-cb05ddd39cd3/1f509742c-7010-4594-8256-8990f1f507c6.png"
+                        alt="Birretes al aire, metas en alto">
+                    <span class="photo-badge">Celebración</span>
+                </div>
+                <div class="photo-card-content">
+                    <h4 class="photo-card-title">Birretes al aire, metas en alto</h4>
+                    <div class="photo-card-user">
+                        <div class="photo-card-avatar">DM</div>
+                        <div class="photo-card-user-info">
+                            <span class="photo-card-user-name">Diego Morales</span>
+                            <span class="photo-card-user-time">Hace 11 horas</span>
+                        </div>
+                    </div>
+                    <div class="photo-card-footer">
+                        <div class="photo-card-actions">
+                            <button class="photo-action like" data-liked="false" data-count="20">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                </svg>
+                                <span class="likes-count">20</span>
+                            </button>
+                            <button class="photo-action comment">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                                </svg>
+                                <span>2</span>
+                            </button>
+                        </div>
+                        <button class="photo-action-menu">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <circle cx="12" cy="5" r="1.5" />
+                                <circle cx="12" cy="12" r="1.5" />
+                                <circle cx="12" cy="19" r="1.5" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 10 -->
+            <div class="photo-card fade-in" data-category="individual">
+                <div class="photo-card-image">
+                    <img src="https://image.qwenlm.ai/public_source/f0a74e98-384c-4e90-96be-cb05ddd39cd3/1a599c4ec-aabc-4e78-93d8-90a6fc90e7d7.png"
+                        alt="Nunca dejes de creer en ti">
+                    <span class="photo-badge">Individual</span>
+                </div>
+                <div class="photo-card-content">
+                    <h4 class="photo-card-title">Nunca dejes de creer en ti</h4>
+                    <div class="photo-card-user">
+                        <div class="photo-card-avatar">GS</div>
+                        <div class="photo-card-user-info">
+                            <span class="photo-card-user-name">Gabriela Silva</span>
+                            <span class="photo-card-user-time">Hace 12 horas</span>
+                        </div>
+                    </div>
+                    <div class="photo-card-footer">
+                        <div class="photo-card-actions">
+                            <button class="photo-action like" data-liked="false" data-count="21">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                </svg>
+                                <span class="likes-count">21</span>
+                            </button>
+                            <button class="photo-action comment">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                                </svg>
+                                <span>1</span>
+                            </button>
+                        </div>
+                        <button class="photo-action-menu">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <circle cx="12" cy="5" r="1.5" />
+                                <circle cx="12" cy="12" r="1.5" />
+                                <circle cx="12" cy="19" r="1.5" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 11 -->
+            <div class="photo-card fade-in" data-category="amigos">
+                <div class="photo-card-image">
+                    <img src="https://image.qwenlm.ai/public_source/f0a74e98-384c-4e90-96be-cb05ddd39cd3/12e45714f-ee7d-4c66-b4fa-4aabe814b5bf.png"
+                        alt="Risas que quedan para siempre">
+                    <span class="photo-badge">Amigos</span>
+                </div>
+                <div class="photo-card-content">
+                    <h4 class="photo-card-title">Risas que quedan para siempre</h4>
+                    <div class="photo-card-user">
+                        <div class="photo-card-avatar">NH</div>
+                        <div class="photo-card-user-info">
+                            <span class="photo-card-user-name">Natalia Herrera</span>
+                            <span class="photo-card-user-time">Hace 13 horas</span>
+                        </div>
+                    </div>
+                    <div class="photo-card-footer">
+                        <div class="photo-card-actions">
+                            <button class="photo-action like" data-liked="false" data-count="19">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                </svg>
+                                <span class="likes-count">19</span>
+                            </button>
+                            <button class="photo-action comment">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                                </svg>
+                                <span>2</span>
+                            </button>
+                        </div>
+                        <button class="photo-action-menu">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <circle cx="12" cy="5" r="1.5" />
+                                <circle cx="12" cy="12" r="1.5" />
+                                <circle cx="12" cy="19" r="1.5" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 12 -->
+            <div class="photo-card fade-in" data-category="familia">
+                <div class="photo-card-image">
+                    <img src="https://image.qwenlm.ai/public_source/f0a74e98-384c-4e90-96be-cb05ddd39cd3/109b3335e-fee2-47e0-a70a-c83939fea8f0.png"
+                        alt="Este triunfo es de todos">
+                    <span class="photo-badge">Familia</span>
+                </div>
+                <div class="photo-card-content">
+                    <h4 class="photo-card-title">Este triunfo es de todos</h4>
+                    <div class="photo-card-user">
+                        <div class="photo-card-avatar">JF</div>
+                        <div class="photo-card-user-info">
+                            <span class="photo-card-user-name">José Fernández</span>
+                            <span class="photo-card-user-time">Hace 14 horas</span>
+                        </div>
+                    </div>
+                    <div class="photo-card-footer">
+                        <div class="photo-card-actions">
+                            <button class="photo-action like" data-liked="false" data-count="26">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                </svg>
+                                <span class="likes-count">26</span>
+                            </button>
+                            <button class="photo-action comment">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                                </svg>
+                                <span>3</span>
+                            </button>
+                        </div>
+                        <button class="photo-action-menu">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <circle cx="12" cy="5" r="1.5" />
+                                <circle cx="12" cy="12" r="1.5" />
+                                <circle cx="12" cy="19" r="1.5" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pagination -->
+    <section class="pagination-section">
+        <div class="pagination">
+            <button class="pagination-btn disabled">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" width="16" height="16">
+                    <polyline points="15 18 9 12 15 6" />
+                </svg>
+            </button>
+            <button class="pagination-btn active">1</button>
+            <button class="pagination-btn">2</button>
+            <button class="pagination-btn">3</button>
+            <button class="pagination-btn">4</button>
+            <span class="pagination-ellipsis">...</span>
+            <button class="pagination-btn">11</button>
+            <button class="pagination-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" width="16" height="16">
+                    <polyline points="9 18 15 12 9 6" />
+                </svg>
+            </button>
+        </div>
+        <button class="btn-load-more">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="17 8 12 3 7 8" />
+                <line x1="12" y1="3" x2="12" y2="15" />
+            </svg>
+            Cargar más fotos
+        </button>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="bottom-cta">
+        <div class="bottom-cta-card fade-in">
+            <div class="bottom-cta-left">
+                <div class="bottom-cta-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                        <circle cx="8.5" cy="8.5" r="1.5" />
+                        <polyline points="21 15 16 10 5 21" />
+                    </svg>
+                </div>
+                <div class="bottom-cta-text">
+                    <h3>¡Tu foto puede inspirar a otros!</h3>
+                    <p>Cada imagen cuenta una historia de esfuerzo, fe y superación.<br>Comparte tu momento y sé parte
+                        del legado BYU-Pathway Venezuela.</p>
+                </div>
+            </div>
+            <button class="btn-upload-photo">
+                Subir mi foto
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="17 8 12 3 7 8" />
+                    <line x1="12" y1="3" x2="12" y2="15" />
+                </svg>
+            </button>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <!-- Column 1: Branding -->
+            <div class="footer-branding">
+                <img src="images/logo2.jpg" alt="BYU Pathway Venezuela">
+                <p>Educación accesible, flexible y de calidad para transformar vidas y comunidades.</p>
+            </div>
+
+            <!-- Column 2: Quick Links -->
+            <div class="footer-col">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="fotos.html">Fotos</a></li>
+                    <li><a href="videos.html">Videos</a></li>
+                    <li><a href="agenda.html">Agenda</a></li>
+                    <li><a href="mensajes.html">Mensajes</a></li>
+                    <li><a href="info.html">Acerca de</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Resources -->
+            <div class="footer-col">
+                <h4>Recursos</h4>
+                <ul>
+                    <li><a href="#">Guía del Graduando</a></li>
+                    <li><a href="#">Preguntas Frecuentes</a></li>
+                    <li><a href="#">Reglamento</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Social + Contact -->
+            <div class="footer-col">
+                <h4>Síguenos</h4>
+                <div class="footer-social">
+                    <a href="#" class="fb" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                        </svg>
+                    </a>
+                    <a href="#" class="ig" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                        </svg>
+                    </a>
+                    <a href="#" class="yt" aria-label="YouTube">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                        </svg>
+                    </a>
+                    <a href="#" class="wa" aria-label="WhatsApp">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                        </svg>
+                    </a>
+                </div>
+                <h4>Contáctanos</h4>
+                <div class="footer-contact-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                    <span>info@byupathwayvzla.edu</span>
+                </div>
+                <div class="footer-contact-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                    <span>+58 212-555-1234</span>
+                </div>
+                <div class="footer-contact-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                        <circle cx="12" cy="10" r="3" />
+                    </svg>
+                    <span>Caracas, Venezuela</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 BYU-Pathway Worldwide. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/animaciones.js"></script>
+</body>
+
+</html>
