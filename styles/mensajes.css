@@ -1,0 +1,818 @@
+/* ============================================
+   MURO DE FELICITACIONES (mensajes.html)
+   ============================================ */
+
+/* 1. Feature Cards */
+.feature-cards-section {
+    padding: 60px 40px;
+    background: var(--gray-light);
+    display: flex;
+    justify-content: center;
+}
+
+.feature-cards-container {
+    max-width: 1200px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.feature-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    transition: var(--transition);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.feature-card-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(10, 61, 109, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.feature-card-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke: var(--blue-dark);
+}
+
+.feature-card-content h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--blue-dark);
+    margin-bottom: 8px;
+}
+
+.feature-card-content p {
+    font-size: 14px;
+    color: var(--gray-text);
+    line-height: 1.5;
+}
+
+/* 2. Main Layout */
+.messages-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.messages-grid {
+    display: grid;
+    grid-template-columns: 2.2fr 1fr;
+    gap: 40px;
+}
+
+.messages-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* 3. Message Form Card */
+.message-form-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    padding: 30px;
+    border: 1px solid var(--gray-border);
+}
+
+.message-form-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--gray-border);
+}
+
+.message-form-header svg {
+    width: 28px;
+    height: 28px;
+}
+
+.message-form-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--blue-dark);
+}
+
+.message-form-body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.textarea-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.message-textarea {
+    width: 100%;
+    height: 120px;
+    padding: 16px;
+    border: 2px solid var(--gray-border);
+    border-radius: var(--radius-sm);
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    color: var(--blue-dark);
+    resize: none;
+    transition: var(--transition);
+    background: var(--gray-light);
+}
+
+.message-textarea:focus {
+    outline: none;
+    border-color: var(--blue-bright);
+    background: var(--white);
+    box-shadow: 0 0 0 4px rgba(0, 155, 182, 0.1);
+}
+
+.char-counter {
+    position: absolute;
+    bottom: 12px;
+    right: 16px;
+    font-size: 12px;
+    color: var(--gray-text);
+}
+
+.form-fields-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+}
+
+.form-field {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.form-field svg {
+    position: absolute;
+    left: 14px;
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+}
+
+.form-input,
+.form-select {
+    width: 100%;
+    padding: 12px 16px 12px 44px;
+    border: 2px solid var(--gray-border);
+    border-radius: var(--radius-sm);
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: var(--blue-dark);
+    transition: var(--transition);
+    background: var(--gray-light);
+    height: 48px;
+}
+
+.form-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 16px;
+}
+
+.form-input:focus,
+.form-select:focus {
+    outline: none;
+    border-color: var(--blue-bright);
+    background: var(--white);
+    box-shadow: 0 0 0 4px rgba(0, 155, 182, 0.1);
+}
+
+.checkbox-field {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--blue-dark);
+    user-select: none;
+}
+
+.checkbox-field input {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--blue-bright);
+    cursor: pointer;
+}
+
+.btn-send-message {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--yellow-gold);
+    color: var(--blue-dark);
+    border: none;
+    padding: 14px 28px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-send-message:hover {
+    background: var(--yellow-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(242, 182, 50, 0.4);
+}
+
+.btn-send-message svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* 4. Feed Header & Sort */
+.messages-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.messages-header h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--blue-dark);
+}
+
+.sort-select {
+    padding: 8px 14px;
+    border: 1px solid var(--gray-border);
+    border-radius: var(--radius-sm);
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: var(--blue-dark);
+    background: var(--white);
+    cursor: pointer;
+}
+
+.sort-select:focus {
+    outline: none;
+    border-color: var(--blue-bright);
+}
+
+/* 5. Messages List & Cards */
+.messages-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.message-card {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    padding: 24px;
+    border: 1px solid var(--gray-border);
+    transition: var(--transition);
+}
+
+.message-card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.message-card-top {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.message-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: var(--shadow-sm);
+}
+
+.message-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.message-card-content {
+    flex: 1;
+}
+
+.message-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.message-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--blue-dark);
+    line-height: 1.2;
+}
+
+.message-location {
+    font-size: 12px;
+    color: var(--gray-text);
+    display: block;
+    margin-top: 2px;
+}
+
+.message-card-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.message-time {
+    font-size: 12px;
+    color: var(--gray-text);
+}
+
+.message-like-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    border: 1px solid var(--gray-border);
+    padding: 6px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.message-like-btn:hover {
+    background: rgba(239, 68, 68, 0.05);
+    border-color: #EF4444;
+}
+
+.message-like-btn svg {
+    width: 16px;
+    height: 16px;
+    transition: var(--transition);
+}
+
+.message-like-btn[data-liked="true"] {
+    background: rgba(239, 68, 68, 0.1);
+    border-color: #EF4444;
+}
+
+.message-like-btn[data-liked="true"] svg {
+    fill: #EF4444;
+    stroke: #EF4444;
+}
+
+.likes-count {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--gray-text);
+}
+
+.message-like-btn:hover .likes-count,
+.message-like-btn[data-liked="true"] .likes-count {
+    color: #EF4444;
+}
+
+.message-text {
+    font-size: 15px;
+    color: var(--blue-dark);
+    line-height: 1.6;
+}
+
+/* 6. Load More */
+.load-more-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.btn-load-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--white);
+    color: var(--blue-dark);
+    border: 2px solid var(--blue-dark);
+    padding: 12px 24px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-load-more:hover {
+    background: var(--blue-dark);
+    color: var(--white);
+}
+
+.btn-load-more svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* 7. Sidebar */
+.messages-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.sidebar-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    padding: 24px;
+    border: 1px solid var(--gray-border);
+}
+
+.sidebar-card-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--gray-border);
+}
+
+.sidebar-card-title svg {
+    width: 22px;
+    height: 22px;
+}
+
+.sidebar-card-title h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--blue-dark);
+}
+
+/* Inspiration Card */
+.inspiration-card {
+    background: linear-gradient(135deg, var(--white), #FAF6ED);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 24px;
+    border-color: #ffc328;
+}
+
+.inspiration-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 16px;
+}
+
+.inspiration-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--blue-dark);
+    margin-bottom: 8px;
+}
+
+.inspiration-card p {
+    font-size: 14px;
+    color: var(--gray-text);
+    line-height: 1.5;
+}
+
+/* Statistics Card */
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.stat-item:last-child {
+    margin-bottom: 0;
+}
+
+.stat-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-sm);
+    background: rgba(0, 155, 182, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--blue-bright);
+    line-height: 1;
+}
+
+.stat-number.stat-blue {
+    color: var(--blue-medium);
+}
+
+.stat-label {
+    font-size: 13px;
+    color: var(--gray-text);
+    line-height: 1.2;
+}
+
+/* Community Guide Card */
+.guide-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.guide-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 13.5px;
+    color: var(--blue-dark);
+    line-height: 1.4;
+}
+
+.guide-list li svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+/* Featured Messages Card */
+.featured-slider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 180px;
+}
+
+.slider-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--gray-border);
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    flex-shrink: 0;
+    z-index: 2;
+}
+
+.slider-btn:hover {
+    border-color: var(--blue-dark);
+    background: var(--gray-light);
+}
+
+.slider-btn svg {
+    width: 14px;
+    height: 14px;
+}
+
+.featured-content {
+    flex: 1;
+    overflow: hidden;
+}
+
+.featured-item {
+    transition: opacity 0.5s ease;
+}
+
+.featured-item-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.message-avatar-sm {
+    width: 36px;
+    height: 36px;
+}
+
+.featured-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--blue-dark);
+}
+
+.featured-location {
+    font-size: 11px;
+    color: var(--gray-text);
+    display: block;
+}
+
+.featured-text {
+    font-size: 13.5px;
+    color: var(--blue-dark);
+    line-height: 1.5;
+    margin-bottom: 12px;
+    font-style: italic;
+}
+
+.featured-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--blue-dark);
+    background: #FFF9EE;
+    padding: 4px 10px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 195, 40, 0.3);
+}
+
+.featured-badge svg {
+    width: 12px;
+    height: 12px;
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 16px;
+}
+
+.slider-dots .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gray-border);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.slider-dots .dot.active {
+    background: var(--blue-dark);
+    width: 16px;
+    border-radius: 4px;
+}
+
+/* Share CTA Card */
+.share-card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 24px;
+}
+
+.share-icon {
+    margin-bottom: 16px;
+}
+
+.share-icon svg {
+    width: 40px;
+    height: 40px;
+}
+
+.share-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--blue-dark);
+    margin-bottom: 8px;
+}
+
+.share-card p {
+    font-size: 13px;
+    color: var(--gray-text);
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.btn-share-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--blue-dark);
+    color: var(--white);
+    border: none;
+    padding: 12px 24px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: var(--transition);
+    width: 100%;
+}
+
+.btn-share-link:hover {
+    background: var(--blue-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(10, 61, 109, 0.3);
+}
+
+.btn-share-link svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN (mensajes.html)
+   ============================================ */
+@media (max-width: 1024px) {
+    .messages-grid {
+        grid-template-columns: 1.8fr 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .feature-cards-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .feature-cards-section {
+        padding: 40px 20px;
+    }
+
+    .messages-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .messages-main {
+        padding: 40px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-fields-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .message-card {
+        padding: 16px;
+    }
+
+    .message-card-top {
+        gap: 12px;
+    }
+
+    .message-avatar {
+        width: 40px;
+        height: 40px;
+    }
+
+    .message-name {
+        font-size: 14px;
+    }
+
+    .message-text {
+        font-size: 13.5px;
+    }
+
+    .message-like-btn {
+        padding: 4px 10px;
+    }
+
+    .likes-count {
+        font-size: 12px;
+    }
+}

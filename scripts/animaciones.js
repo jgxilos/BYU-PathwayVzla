@@ -465,3 +465,248 @@
                 }
             });
         });
+
+        // ============================================
+        // MENSAJES.HTML SPECIFIC LOGIC
+        // ============================================
+        (function() {
+            const charCounter = document.getElementById('charCounter');
+            const messagesCount = document.getElementById('messagesCount');
+            
+            // Solo ejecutar si estamos en la página de mensajes
+            if (!charCounter) return;
+
+            const messageTextarea = document.getElementById('messageTextarea');
+            const btnSendMessage = document.getElementById('btnSendMessage');
+            const nameInput = document.getElementById('nameInput');
+            const locationSelect = document.getElementById('locationSelect');
+            const anonymousCheck = document.getElementById('anonymousCheck');
+            const messagesList = document.getElementById('messagesList');
+
+            if (messageTextarea && charCounter) {
+                messageTextarea.addEventListener('input', function () {
+                    var currentLength = this.value.length;
+                    charCounter.textContent = currentLength + '/500';
+                    if (currentLength >= 480) {
+                        charCounter.style.color = '#ef4444';
+                    } else {
+                        charCounter.style.color = '';
+                    }
+                });
+            }
+
+            var avatarImages = [
+                'https://image.qwenlm.ai/public_source/c18da45d-c2ad-400f-a2dd-d8c3b6cd6c88/16f490748-6b90-4f02-922b-0d70431973b4.png',
+                'https://image.qwenlm.ai/public_source/c18da45d-c2ad-400f-a2dd-d8c3b6cd6c88/142a2f644-c727-4272-937f-ee052c325608.png',
+                'https://image.qwenlm.ai/public_source/c18da45d-c2ad-400f-a2dd-d8c3b6cd6c88/1b2f9e0e9-bdcd-4722-8ed4-11eeb42caa91.png',
+                'https://image.qwenlm.ai/public_source/c18da45d-c2ad-400f-a2dd-d8c3b6cd6c88/1012ac41f-4342-4ed6-a5c9-76559818bc30.png',
+                'https://image.qwenlm.ai/public_source/c18da45d-c2ad-400f-a2dd-d8c3b6cd6c88/186dff940-2adc-41d5-86b5-5a5849e7052d.png'
+            ];
+            var avatarIndex = 0;
+
+            function getTimeString() {
+                return 'Ahora mismo';
+            }
+
+            // Note: Overriding btnSendMessage specifically for mensajes.html
+            // The one in the global scope won't work correctly since it checks for charCountEl (which is null here)
+            if (btnSendMessage && messageTextarea) {
+                // Remove any previously attached listeners by cloning the node
+                const newBtn = btnSendMessage.cloneNode(true);
+                btnSendMessage.parentNode.replaceChild(newBtn, btnSendMessage);
+                
+                newBtn.addEventListener('click', function () {
+                    var messageText = messageTextarea.value.trim();
+                    if (messageText.length === 0) {
+                        messageTextarea.style.borderColor = '#ef4444';
+                        messageTextarea.setAttribute('placeholder', 'Por favor escribe un mensaje...');
+                        setTimeout(function () {
+                            messageTextarea.style.borderColor = '';
+                            messageTextarea.setAttribute('placeholder', 'Escribe tu mensaje de felicitación...');
+                        }, 2000);
+                        return;
+                    }
+
+                    var userName = nameInput.value.trim() || (anonymousCheck.checked ? 'Anónimo' : 'Invitado');
+                    var userLocation = locationSelect.value || 'Venezuela';
+
+                    var newMessageCard = document.createElement('div');
+                    newMessageCard.className = 'message-card fade-in';
+                    newMessageCard.style.opacity = '0';
+                    newMessageCard.style.transform = 'translateY(10px)';
+
+                    var avatarSrc = avatarImages[avatarIndex % avatarImages.length];
+                    avatarIndex++;
+
+                    newMessageCard.innerHTML = '<div class="message-card-top">' +
+                        '<div class="message-avatar">' +
+                        '<img src="' + avatarSrc + '" alt="' + userName + '">' +
+                        '</div>' +
+                        '<div class="message-card-content">' +
+                        '<div class="message-card-header">' +
+                        '<div>' +
+                        '<h5 class="message-name">' + userName + '</h5>' +
+                        '<span class="message-location">' + userLocation + ', Venezuela</span>' +
+                        '</div>' +
+                        '<div class="message-card-actions">' +
+                        '<span class="message-time">' + getTimeString() + '</span>' +
+                        '<button class="message-like-btn" data-liked="false" data-count="0">' +
+                        '<svg viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+                        '<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>' +
+                        '</svg>' +
+                        '<span class="likes-count">0</span>' +
+                        '</button>' +
+                        '</div>' +
+                        '</div>' +
+                        '<p class="message-text">' + messageText + '</p>' +
+                        '</div>' +
+                        '</div>';
+
+                    if (messagesList) {
+                        messagesList.insertBefore(newMessageCard, messagesList.firstChild);
+
+                        requestAnimationFrame(function () {
+                            newMessageCard.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                            newMessageCard.style.opacity = '1';
+                            newMessageCard.style.transform = 'translateY(0)';
+                        });
+
+                        var allMessages = messagesList.querySelectorAll('.message-card');
+                        if (allMessages.length > 5) {
+                            var lastMessage = allMessages[allMessages.length - 1];
+                            lastMessage.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                            lastMessage.style.opacity = '0';
+                            lastMessage.style.transform = 'translateY(10px)';
+                            setTimeout(function () {
+                                lastMessage.remove();
+                                if (messagesCount) {
+                                    messagesCount.textContent = messagesList.querySelectorAll('.message-card').length;
+                                }
+                            }, 300);
+                        } else {
+                            if (messagesCount) {
+                                messagesCount.textContent = messagesList.querySelectorAll('.message-card').length;
+                            }
+                        }
+                    }
+
+                    var newLikeBtn = newMessageCard.querySelector('.message-like-btn');
+                    if (newLikeBtn) {
+                        setupLikeButtonSpecific(newLikeBtn);
+                    }
+
+                    messageTextarea.value = '';
+                    charCounter.textContent = '0/500';
+                    charCounter.style.color = '';
+                });
+            }
+
+            function setupLikeButtonSpecific(likeElement) {
+                // Ensure no duplicates
+                const newLikeElement = likeElement.cloneNode(true);
+                if (likeElement.parentNode) {
+                    likeElement.parentNode.replaceChild(newLikeElement, likeElement);
+                }
+                
+                newLikeElement.addEventListener('click', function () {
+                    var isLiked = this.getAttribute('data-liked') === 'true';
+                    var countSpan = this.querySelector('.likes-count');
+                    var currentCount = parseInt(this.getAttribute('data-count'));
+
+                    if (isLiked) {
+                        currentCount--;
+                        this.setAttribute('data-liked', 'false');
+                        this.style.color = '';
+                        var svgEl = this.querySelector('svg');
+                        if (svgEl) svgEl.style.fill = 'none';
+                    } else {
+                        currentCount++;
+                        this.setAttribute('data-liked', 'true');
+                        this.style.color = '#ef4444';
+                        var svgEl = this.querySelector('svg');
+                        if (svgEl) svgEl.style.fill = '#EF4444';
+                    }
+
+                    this.setAttribute('data-count', currentCount);
+                    countSpan.textContent = currentCount;
+                });
+            }
+
+            document.querySelectorAll('.message-like-btn').forEach(function (likeEl) {
+                setupLikeButtonSpecific(likeEl);
+            });
+
+            var sliderPrev = document.getElementById('sliderPrev');
+            var sliderNext = document.getElementById('sliderNext');
+            var featuredContent = document.getElementById('featuredContent');
+            var sliderDots = document.getElementById('sliderDots');
+            var currentSlide = 0;
+
+            function showSlide(index) {
+                if (!featuredContent) return;
+                var items = featuredContent.querySelectorAll('.featured-item');
+                var dots = sliderDots ? sliderDots.querySelectorAll('.dot') : [];
+
+                items.forEach(function (item, i) {
+                    item.style.display = i === index ? 'block' : 'none';
+                });
+
+                dots.forEach(function (dot, i) {
+                    dot.classList.toggle('active', i === index);
+                });
+
+                currentSlide = index;
+            }
+
+            if (sliderPrev && sliderNext && featuredContent) {
+                var totalSlides = featuredContent.querySelectorAll('.featured-item').length;
+
+                sliderPrev.addEventListener('click', function () {
+                    var newIndex = (currentSlide - 1 + totalSlides) % totalSlides;
+                    showSlide(newIndex);
+                });
+
+                sliderNext.addEventListener('click', function () {
+                    var newIndex = (currentSlide + 1) % totalSlides;
+                    showSlide(newIndex);
+                });
+
+                if (sliderDots) {
+                    var dots = sliderDots.querySelectorAll('.dot');
+                    dots.forEach(function (dot, index) {
+                        dot.addEventListener('click', function () {
+                            showSlide(index);
+                        });
+                    });
+                }
+            }
+
+            var btnShareLink = document.querySelector('.btn-share-link');
+            if (btnShareLink) {
+                btnShareLink.addEventListener('click', function () {
+                    var currentUrl = window.location.href;
+                    if (navigator.clipboard) {
+                        navigator.clipboard.writeText(currentUrl).then(function () {
+                            btnShareLink.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> ¡Enlace copiado!';
+                            setTimeout(function () {
+                                btnShareLink.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg> Compartir enlace';
+                            }, 2000);
+                        });
+                    }
+                });
+            }
+
+            var btnLoadMore = document.querySelector('.btn-load-more');
+            if (btnLoadMore) {
+                btnLoadMore.addEventListener('click', function () {
+                    btnLoadMore.textContent = 'Cargando...';
+                    btnLoadMore.disabled = true;
+
+                    setTimeout(function () {
+                        btnLoadMore.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> No hay más mensajes';
+                        btnLoadMore.style.opacity = '0.6';
+                        btnLoadMore.style.cursor = 'default';
+                    }, 1500);
+                });
+            }
+        })();
