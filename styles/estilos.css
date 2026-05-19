@@ -3484,3 +3484,861 @@
         font-size: 16px;
     }
 }
+
+/* ============================================
+   INFO PAGE - HERO SECTION
+   ============================================ */
+.hero-info {
+    position: relative;
+    min-height: 460px;
+    margin-top: 90px;
+    overflow: hidden;
+}
+
+.hero-info-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-info-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-info-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(10, 61, 109, 0.92) 0%, rgba(6, 85, 119, 0.85) 60%, rgba(20, 90, 150, 0.7) 100%);
+    z-index: 2;
+}
+
+.hero-info-content {
+    position: relative;
+    z-index: 3;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    display: flex;
+    align-items: center;
+    min-height: 460px;
+    gap: 60px;
+}
+
+.hero-info-text {
+    flex: 1;
+    max-width: 580px;
+}
+
+.hero-info-pretitle {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 8px;
+}
+
+.hero-info-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 800;
+    font-size: 64px;
+    line-height: 1.05;
+    color: var(--white);
+    margin-bottom: 12px;
+}
+
+.hero-info-decorative-line {
+    width: 70px;
+    height: 5px;
+    background: var(--yellow-dark);
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.hero-info-subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--yellow-gold);
+    margin-bottom: 16px;
+    line-height: 1.4;
+}
+
+.hero-info-description {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.92);
+    line-height: 1.8;
+    max-width: 520px;
+}
+
+/* Decorative Wave */
+.decorative-wave {
+    position: relative;
+    z-index: 4;
+    margin-top: -1px;
+}
+
+.decorative-wave svg {
+    display: block;
+    width: 100%;
+    height: 80px;
+}
+
+/* ============================================
+   INFO PAGE - MISSION & VISION
+   ============================================ */
+.mission-vision-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 5;
+    margin-top: -20px;
+}
+
+.mission-vision-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    padding: 48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.mission-item,
+.vision-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+.vision-item {
+    padding-left: 40px;
+    border-left: 1px solid var(--gray-border);
+}
+
+.mv-icon-circle {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: var(--blue-celeste);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.mv-icon-circle svg {
+    width: 40px;
+    height: 40px;
+    color: var(--white);
+}
+
+.mv-content h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--blue-dark);
+    margin-bottom: 8px;
+}
+
+.mv-content p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--gray-text);
+    line-height: 1.7;
+}
+
+/* ============================================
+   INFO PAGE - ABOUT / WHAT IS BYU-PATHWAY
+   ============================================ */
+.about-section {
+    max-width: 1200px;
+    margin: 40px auto 0;
+    padding: 0 20px;
+}
+
+.about-card {
+    background: var(--white);
+    border-radius: 18px;
+    padding: 40px;
+}
+
+.about-card-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 26px;
+    color: var(--blue-dark);
+    margin-bottom: 12px;
+}
+
+.about-card-description {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: var(--gray-text);
+    line-height: 1.7;
+    margin-bottom: 32px;
+    max-width: 900px;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
+}
+
+.benefit-item {
+    text-align: center;
+    padding: 24px 12px;
+    transition: var(--transition);
+}
+
+.benefit-item:hover {
+    transform: translateY(-4px);
+}
+
+.benefit-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(18, 181, 208, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    transition: var(--transition);
+}
+
+.benefit-item:hover .benefit-icon {
+    background: rgba(18, 181, 208, 0.15);
+    transform: scale(1.05);
+}
+
+.benefit-icon svg {
+    width: 28px;
+    height: 28px;
+    color: var(--blue-celeste);
+}
+
+.benefit-item h4 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--blue-dark);
+    margin-bottom: 8px;
+}
+
+.benefit-item p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--gray-text);
+    line-height: 1.5;
+}
+
+/* ============================================
+   INFO PAGE - PROGRAMS SECTION
+   ============================================ */
+.programs-section {
+    max-width: 1200px;
+    margin: 40px auto 0;
+    padding: 0 20px;
+}
+
+.programs-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    box-shadow: var(--shadow-md);
+}
+
+.programs-content {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.programs-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 26px;
+    color: var(--blue-dark);
+    margin-bottom: 12px;
+    position: relative;
+}
+
+.programs-title::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: var(--yellow-dark);
+    border-radius: 2px;
+    margin-top: 8px;
+    margin-bottom: 16px;
+}
+
+.programs-description {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--gray-text);
+    line-height: 1.7;
+    margin-bottom: 28px;
+}
+
+.programs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.program-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.program-icon-circle {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #EEF7FC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: var(--transition);
+}
+
+.program-item:hover .program-icon-circle {
+    background: rgba(18, 181, 208, 0.15);
+}
+
+.program-icon-circle svg {
+    width: 24px;
+    height: 24px;
+    color: var(--blue-celeste);
+}
+
+.program-item-content h4 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--blue-dark);
+    margin-bottom: 4px;
+}
+
+.program-item-content p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    color: var(--gray-text);
+    line-height: 1.5;
+}
+
+.programs-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    min-height: 420px;
+}
+
+.programs-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.programs-image-wrapper:hover img {
+    transform: scale(1.03);
+}
+
+.programs-image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(10, 61, 109, 0.92) 100%);
+    padding: 40px 32px 32px;
+}
+
+.programs-overlay-icon {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.programs-overlay-icon svg {
+    width: 24px;
+    height: 24px;
+    color: var(--blue-celeste);
+}
+
+.programs-overlay-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--white);
+    margin-bottom: 6px;
+}
+
+.programs-overlay-desc {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+}
+
+/* ============================================
+   INFO PAGE - VENEZUELA PRESENCE
+   ============================================ */
+.venezuela-section {
+    max-width: 1200px;
+    margin: 40px auto 0;
+    padding: 0 20px;
+}
+
+.venezuela-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    box-shadow: var(--shadow-md);
+}
+
+.venezuela-content {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.venezuela-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 26px;
+    color: var(--blue-dark);
+    margin-bottom: 12px;
+    position: relative;
+}
+
+.venezuela-title::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: var(--yellow-dark);
+    border-radius: 2px;
+    margin-top: 8px;
+    margin-bottom: 16px;
+}
+
+.venezuela-description {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--gray-text);
+    line-height: 1.7;
+    margin-bottom: 32px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 20px 12px;
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(18, 181, 208, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px;
+}
+
+.stat-icon svg {
+    width: 22px;
+    height: 22px;
+    color: var(--blue-celeste);
+}
+
+.stat-number {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 42px;
+    color: var(--blue-dark);
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.stat-label {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    color: var(--blue-dark);
+    margin-bottom: 2px;
+}
+
+.stat-sublabel {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    color: var(--gray-text);
+}
+
+.venezuela-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    min-height: 420px;
+}
+
+.venezuela-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.venezuela-image-wrapper:hover img {
+    transform: scale(1.03);
+}
+
+/* ============================================
+   INFO PAGE - FINAL CTA BANNER
+   ============================================ */
+.final-cta-section {
+    max-width: 1200px;
+    margin: 40px auto 0;
+    padding: 0 20px 40px;
+}
+
+.final-cta-card {
+    background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-primary) 100%);
+    border-radius: var(--radius-lg);
+    padding: 36px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.final-cta-left {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex: 1;
+}
+
+.final-cta-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(242, 182, 50, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.final-cta-icon svg {
+    width: 32px;
+    height: 32px;
+    color: var(--yellow-dark);
+}
+
+.final-cta-text h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--white);
+    margin-bottom: 4px;
+}
+
+.final-cta-text p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+}
+
+.btn-final-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--yellow-dark);
+    color: var(--blue-dark);
+    padding: 18px 34px;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    white-space: nowrap;
+}
+
+.btn-final-cta:hover {
+    background: var(--yellow-gold);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(242, 182, 50, 0.4);
+}
+
+/* ============================================
+   INFO PAGE - RESPONSIVE
+   ============================================ */
+@media (max-width: 1024px) {
+    .hero-info-content {
+        padding: 40px 24px;
+        gap: 40px;
+    }
+
+    .hero-info-title {
+        font-size: 48px;
+    }
+
+    .mission-vision-card {
+        padding: 36px;
+    }
+
+    .benefits-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .programs-card {
+        grid-template-columns: 1fr;
+    }
+
+    .programs-image-wrapper {
+        min-height: 300px;
+    }
+
+    .venezuela-card {
+        grid-template-columns: 1fr;
+    }
+
+    .venezuela-image-wrapper {
+        min-height: 300px;
+    }
+
+    .final-cta-card {
+        padding: 28px 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-info {
+        margin-top: 70px;
+        min-height: 400px;
+    }
+
+    .hero-info-content {
+        padding: 36px 20px;
+        min-height: 400px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    .hero-info-text {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .hero-info-pretitle {
+        font-size: 14px;
+    }
+
+    .hero-info-title {
+        font-size: 34px;
+    }
+
+    .hero-info-decorative-line {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-info-subtitle {
+        font-size: 16px;
+    }
+
+    .hero-info-description {
+        font-size: 14px;
+    }
+
+    .decorative-wave svg {
+        height: 50px;
+    }
+
+    .mission-vision-section {
+        margin-top: -10px;
+    }
+
+    .mission-vision-card {
+        padding: 24px;
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .vision-item {
+        padding-left: 0;
+        border-left: none;
+        border-top: 1px solid var(--gray-border);
+        padding-top: 24px;
+    }
+
+    .mv-icon-circle {
+        width: 70px;
+        height: 70px;
+    }
+
+    .mv-icon-circle svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    .about-section {
+        margin-top: 30px;
+    }
+
+    .about-card {
+        padding: 24px;
+    }
+
+    .about-card-title {
+        font-size: 22px;
+    }
+
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .programs-section {
+        margin-top: 30px;
+    }
+
+    .programs-content {
+        padding: 24px;
+    }
+
+    .programs-title {
+        font-size: 22px;
+    }
+
+    .programs-image-wrapper {
+        min-height: 250px;
+    }
+
+    .venezuela-section {
+        margin-top: 30px;
+    }
+
+    .venezuela-content {
+        padding: 24px;
+    }
+
+    .venezuela-title {
+        font-size: 22px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+    }
+
+    .stat-number {
+        font-size: 32px;
+    }
+
+    .venezuela-image-wrapper {
+        min-height: 220px;
+    }
+
+    .final-cta-section {
+        padding: 0 16px 30px;
+    }
+
+    .final-cta-card {
+        flex-direction: column;
+        padding: 28px 24px;
+        text-align: center;
+    }
+
+    .final-cta-left {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .btn-final-cta {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-info-title {
+        font-size: 28px;
+    }
+
+    .hero-info-subtitle {
+        font-size: 14px;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-item {
+        padding: 16px 12px;
+    }
+
+    .stat-number {
+        font-size: 36px;
+    }
+
+    .programs-image-overlay {
+        padding: 24px 20px 20px;
+    }
+
+    .programs-overlay-title {
+        font-size: 14px;
+    }
+
+    .programs-overlay-desc {
+        font-size: 12px;
+    }
+}

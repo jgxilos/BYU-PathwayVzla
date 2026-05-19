@@ -12,8 +12,10 @@
             }
         });
 
-        // Prevent scroll during loading
-        document.body.style.overflow = 'hidden';
+        // Prevent scroll during loading (only if preloader exists)
+        if (document.getElementById('preloader')) {
+            document.body.style.overflow = 'hidden';
+        }
 
         // ============================================
         // HEADER SCROLL EFFECT
@@ -707,6 +709,119 @@
                         btnLoadMore.style.opacity = '0.6';
                         btnLoadMore.style.cursor = 'default';
                     }, 1500);
+                });
+            }
+        })();
+
+        // ============================================
+        // INFO PAGE ANIMATIONS
+        // ============================================
+        (function() {
+            // Counter Animation for Stats
+            var statNumbers = document.querySelectorAll('.stat-number');
+            if (statNumbers.length === 0) return;
+
+            var counterObserver = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        var el = entry.target;
+                        var text = el.textContent;
+                        var prefix = text.charAt(0) === '+' ? '+' : '';
+                        var numStr = text.replace('+', '').replace(',', '');
+                        var target = parseInt(numStr);
+
+                        if (isNaN(target)) {
+                            counterObserver.unobserve(el);
+                            return;
+                        }
+
+                        var current = 0;
+                        var duration = 1500;
+                        var step = target / (duration / 16);
+
+                        function updateCounter() {
+                            current += step;
+                            if (current >= target) {
+                                current = target;
+                                el.textContent = prefix + target.toLocaleString();
+                                counterObserver.unobserve(el);
+                                return;
+                            }
+                            el.textContent = prefix + Math.floor(current).toLocaleString();
+                            requestAnimationFrame(updateCounter);
+                        }
+
+                        updateCounter();
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            statNumbers.forEach(function (el) {
+                counterObserver.observe(el);
+            });
+
+            // Benefit Items Staggered Animation
+            var benefitsGrid = document.querySelector('.benefits-grid');
+            if (benefitsGrid) {
+                var benefitObserver = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            var items = entry.target.querySelectorAll('.benefit-item');
+                            items.forEach(function (item, index) {
+                                item.style.opacity = '0';
+                                item.style.transform = 'translateY(20px)';
+                                item.style.transition = 'opacity 0.5s ease ' + (index * 0.1) + 's, transform 0.5s ease ' + (index * 0.1) + 's';
+                                setTimeout(function () {
+                                    item.style.opacity = '1';
+                                    item.style.transform = 'translateY(0)';
+                                }, 100);
+                            });
+                            benefitObserver.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.2 });
+
+                benefitObserver.observe(benefitsGrid);
+            }
+
+            // Program Items Animation
+            var programsList = document.querySelector('.programs-list');
+            if (programsList) {
+                var programObserver = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            var items = entry.target.querySelectorAll('.program-item');
+                            items.forEach(function (item, index) {
+                                item.style.opacity = '0';
+                                item.style.transform = 'translateX(-20px)';
+                                item.style.transition = 'opacity 0.5s ease ' + (index * 0.15) + 's, transform 0.5s ease ' + (index * 0.15) + 's';
+                                setTimeout(function () {
+                                    item.style.opacity = '1';
+                                    item.style.transform = 'translateX(0)';
+                                }, 100);
+                            });
+                            programObserver.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.3 });
+
+                programObserver.observe(programsList);
+            }
+
+            // Final CTA Button Interaction
+            var btnFinalCta = document.getElementById('btnFinalCta');
+            if (btnFinalCta) {
+                btnFinalCta.addEventListener('click', function () {
+                    var originalText = this.textContent;
+                    this.textContent = 'Gracias por compartir!';
+                    this.style.background = '#10B981';
+                    this.style.color = '#FFFFFF';
+                    var btn = this;
+                    setTimeout(function () {
+                        btn.textContent = originalText;
+                        btn.style.background = '';
+                        btn.style.color = '';
+                    }, 2500);
                 });
             }
         })();

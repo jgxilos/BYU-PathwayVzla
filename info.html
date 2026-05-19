@@ -1,0 +1,463 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca de | BYU-Pathway Venezuela</title>
+    <meta name="description"
+        content="Conoce mas sobre BYU-Pathway Worldwide en Venezuela. Educacion accesible, flexible y de calidad para transformar vidas y comunidades.">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/estilos.css">
+</head>
+
+<body>
+    <!-- PRELOADER -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-cap">
+            <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M60 15L15 35L60 55L105 35L60 15Z" fill="#0A3D6D" stroke="#0A3D6D" stroke-width="2" />
+                <path d="M25 40L60 58L95 40L95 75C95 85 80 95 60 100C40 95 25 85 25 75V40Z" fill="#065577" />
+                <rect x="55" y="35" width="10" height="12" rx="2" fill="#ffc328" />
+                <path d="M65 47L65 90" stroke="#ffc328" stroke-width="3" />
+                <circle cx="65" cy="92" r="6" fill="#ffc328" />
+                <path d="M60 45L60 60" stroke="#F2B632" stroke-width="4" stroke-linecap="round" />
+                <path d="M60 60C60 70 55 80 50 85" stroke="#F2B632" stroke-width="4" stroke-linecap="round" />
+            </svg>
+        </div>
+        <div class="preloader-text">Cargando</div>
+        <div class="preloader-dots">
+            <div class="preloader-dot"></div>
+            <div class="preloader-dot"></div>
+            <div class="preloader-dot"></div>
+        </div>
+    </div>
+
+    <!-- Confetti Canvas -->
+    <canvas id="confettiCanvas"></canvas>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="header-inner">
+            <a href="index.html" class="header-logo">
+                <img src="images/logo.jpg" alt="BYU Pathway Venezuela Logo">
+            </a>
+            <nav class="header-nav" id="headerNav">
+                <a href="index.html">Inicio</a>
+                <a href="fotos.html">Fotos</a>
+                <a href="videos.html">Videos</a>
+                <a href="agenda.html">Agenda</a>
+                <a href="mensajes.html">Mensajes</a>
+                <a href="info.html" class="active">Acerca de</a>
+                <a href="#" class="live-link">En Vivo</a>
+            </nav>
+            <button class="header-cta" id="headerCta">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="17 8 12 3 7 8" />
+                    <line x1="12" y1="3" x2="12" y2="15" />
+                </svg>
+                Subir Contenido
+            </button>
+            <div class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" id="mobileNav">
+        <a href="index.html">Inicio</a>
+        <a href="fotos.html">Fotos</a>
+        <a href="videos.html">Videos</a>
+        <a href="agenda.html">Agenda</a>
+        <a href="mensajes.html" class="active">Mensajes</a>
+        <a href="info.html">Acerca de</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-info">
+        <div class="hero-info-bg">
+            <img src="images/Banner3.jpg" alt="Graduados BYU Pathway Venezuela">
+        </div>
+        <div class="hero-info-overlay"></div>
+        <div class="hero-info-content">
+            <div class="hero-info-text">
+                <p class="hero-info-pretitle">Acerca de</p>
+                <h1 class="hero-info-title">BYU-Pathway<br>Venezuela</h1>
+                <div class="hero-info-decorative-line"></div>
+                <p class="hero-info-subtitle">Educación accesible, flexible y de calidad para transformar vidas y
+                    comunidades.</p>
+                <p class="hero-info-description">BYU-Pathway Worldwide es una iniciativa de la Universidad Brigham Young
+                    – Idaho que brinda oportunidades educativas a estudiantes en todo el mundo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Decorative Wave -->
+    <div class="decorative-wave">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0L1440 0L1440 40C1440 40 1200 80 720 80C240 80 0 40 0 40L0 0Z" fill="#F5F7FA" />
+            <path d="M0 20C0 20 240 60 720 60C1200 60 1440 20 1440 20L1440 80L0 80L0 20Z" fill="#F5F7FA" />
+        </svg>
+    </div>
+
+    <!-- Mission & Vision Section -->
+    <section class="mission-vision-section fade-in">
+        <div class="mission-vision-card">
+            <div class="mission-item">
+                <div class="mv-icon-circle">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3 21h18M3 21l9-9 9 9M5 10V7a2 2 0 012-2h10a2 2 0 012 2v3" />
+                    </svg>
+                </div>
+                <div class="mv-content">
+                    <h3>Nuestra Misión</h3>
+                    <p>Ayudar a los estudiantes a desarrollar la fe, obtener conocimiento y mejorar su carácter a través
+                        de una educación accesible basada en principios y valores eternos.</p>
+                </div>
+            </div>
+            <div class="vision-item">
+                <div class="mv-icon-circle">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                </div>
+                <div class="mv-content">
+                    <h3>Nuestra Visión</h3>
+                    <p>Ser un puente de oportunidades que transforme vidas y comunidades, formando líderes íntegros que
+                        generen un impacto positivo en Venezuela y el mundo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / What is BYU-Pathway Section -->
+    <section class="about-section fade-in">
+        <div class="about-card">
+            <h2 class="about-card-title">¿Qué es BYU-Pathway Worldwide?</h2>
+            <p class="about-card-description">BYU-Pathway Worldwide ofrece programas académicos en línea y presenciales
+                diseñados para ser flexibles, asequibles y centrados en el estudiante. Nuestro propósito es abrir las
+                puertas de la educación superior a todos, sin importar su situación económica o ubicación.</p>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                    </div>
+                    <h4>Educación de calidad</h4>
+                    <p>Currículos de la Universidad Brigham Young – Idaho, reconocidos internacionalmente.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <h4>100% flexible</h4>
+                    <p>Estudia en línea a tu ritmo, desde cualquier lugar y en cualquier momento.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h4>Asequible</h4>
+                    <p>Costos accesibles y opciones de becas para que nada detenga tu futuro.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                    </div>
+                    <h4>Enfoque integral</h4>
+                    <p>Formación académica, espiritual y de liderazgo para toda la vida.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h4>Impacto global</h4>
+                    <p>Miles de estudiantes en todo el mundo transformando sus comunidades.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="programs-section fade-in">
+        <div class="programs-card">
+            <div class="programs-content">
+                <h2 class="programs-title">Nuestros Programas</h2>
+                <p class="programs-description">Programas académicos que te preparan para nuevas oportunidades y te
+                    impulsan a alcanzar tus metas personales y profesionales.</p>
+                <div class="programs-list">
+                    <div class="program-item">
+                        <div class="program-icon-circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                            </svg>
+                        </div>
+                        <div class="program-item-content">
+                            <h4>Certificados y Diplomas</h4>
+                            <p>Programas cortos para desarrollar habilidades y avanzar en tu carrera.</p>
+                        </div>
+                    </div>
+                    <div class="program-item">
+                        <div class="program-icon-circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                            </svg>
+                        </div>
+                        <div class="program-item-content">
+                            <h4>Títulos de Asociado</h4>
+                            <p>Una base sólida para continuar tus estudios universitarios.</p>
+                        </div>
+                    </div>
+                    <div class="program-item">
+                        <div class="program-icon-circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                                <path
+                                    d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+                            </svg>
+                        </div>
+                        <div class="program-item-content">
+                            <h4>Transferencia Universitaria</h4>
+                            <p>Transfiere tus créditos a universidades locales e internacionales.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="programs-image-wrapper">
+                <img src="https://image.qwenlm.ai/public_source/454ee75a-e53e-4fdc-a674-b73beb8abe6b/16c2d83ed-d777-4615-a684-f1bd97eca723.png"
+                    alt="Estudiantes BYU Pathway">
+                <div class="programs-image-overlay">
+                    <div class="programs-overlay-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                    </div>
+                    <p class="programs-overlay-title">Miles de historias, un mismo propósito</p>
+                    <p class="programs-overlay-desc">Cada estudiante es diferente, pero todos comparten el deseo de
+                        superarse y dejar un legado de bien.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Venezuela Presence Section -->
+    <section class="venezuela-section fade-in">
+        <div class="venezuela-card">
+            <div class="venezuela-content">
+                <h2 class="venezuela-title">Presencia en Venezuela</h2>
+                <p class="venezuela-description">BYU-Pathway Venezuela está presente para apoyarte en cada paso de tu
+                    camino educativo.</p>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </div>
+                        <div class="stat-number">+20</div>
+                        <div class="stat-label">Centros de Apoyo</div>
+                        <div class="stat-sublabel">en todo el país</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                        </div>
+                        <div class="stat-number">+8,000</div>
+                        <div class="stat-label">Estudiantes</div>
+                        <div class="stat-sublabel">en Venezuela</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                                <path
+                                    d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+                            </svg>
+                        </div>
+                        <div class="stat-number">+1,500</div>
+                        <div class="stat-label">Graduados</div>
+                        <div class="stat-sublabel">y contando</div>
+                    </div>
+                </div>
+            </div>
+            <div class="venezuela-image-wrapper">
+                <img src="https://image.qwenlm.ai/public_source/454ee75a-e53e-4fdc-a674-b73beb8abe6b/13b3b6224-00de-4001-a4e8-d0b5e43086e2.png"
+                    alt="Caracas Venezuela">
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Banner -->
+    <section class="final-cta-section fade-in">
+        <div class="final-cta-card">
+            <div class="final-cta-left">
+                <div class="final-cta-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        stroke-width="2">
+                        <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                        <path
+                            d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                    </svg>
+                </div>
+                <div class="final-cta-text">
+                    <h3>Tu historia puede inspirar a otros</h3>
+                    <p>Cada logro, cada esfuerzo y cada sueño alcanzado pueden ser la luz que guíe a alguien más. Sigue
+                        adelante, tu legado apenas comienza.</p>
+                </div>
+            </div>
+            <button class="btn-final-cta">Comparte tu historia</button>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <!-- Column 1: Branding -->
+            <div class="footer-branding">
+                <img src="images/logo2.jpg" alt="BYU Pathway Venezuela">
+                <p>Educación accesible, flexible y de calidad para transformar vidas y comunidades.</p>
+            </div>
+
+            <!-- Column 2: Quick Links -->
+            <div class="footer-col">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="fotos.html">Fotos</a></li>
+                    <li><a href="videos.html">Videos</a></li>
+                    <li><a href="agenda.html">Agenda</a></li>
+                    <li><a href="mensajes.html">Mensajes</a></li>
+                    <li><a href="info.html">Acerca de</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Resources -->
+            <div class="footer-col">
+                <h4>Recursos</h4>
+                <ul>
+                    <li><a href="#">Guía del Graduando</a></li>
+                    <li><a href="#">Preguntas Frecuentes</a></li>
+                    <li><a href="#">Reglamento</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Social + Contact -->
+            <div class="footer-col">
+                <h4>Síguenos</h4>
+                <div class="footer-social">
+                    <a href="#" class="fb" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                        </svg>
+                    </a>
+                    <a href="#" class="ig" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                        </svg>
+                    </a>
+                    <a href="#" class="yt" aria-label="YouTube">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                        </svg>
+                    </a>
+                    <a href="#" class="wa" aria-label="WhatsApp">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                        </svg>
+                    </a>
+                </div>
+                <h4>Contáctanos</h4>
+                <div class="footer-contact-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                    <span>info@byupathwayvzla.edu</span>
+                </div>
+                <div class="footer-contact-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                    <span>+58 212-555-1234</span>
+                </div>
+                <div class="footer-contact-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                        <circle cx="12" cy="10" r="3" />
+                    </svg>
+                    <span>Caracas, Venezuela</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 BYU-Pathway Worldwide. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/animaciones.js" defer></script>
+</body>
+
+</html>
